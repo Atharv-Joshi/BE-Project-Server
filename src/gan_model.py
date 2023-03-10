@@ -2,7 +2,6 @@ from PIL import Image
 import numpy as np
 from matplotlib import image
 from matplotlib import pyplot as plt
-import os
 import io
 from tensorflow.keras.models import load_model
 
