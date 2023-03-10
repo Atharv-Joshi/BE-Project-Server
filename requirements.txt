@@ -1,0 +1,7 @@
+flask
+PIL
+numpy
+matplotlib
+os
+io
+tensorflow
