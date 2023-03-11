@@ -3,6 +3,7 @@ import numpy as np
 from matplotlib import image
 from matplotlib import pyplot as plt
 import io
+import base64 
 from tensorflow.keras.models import load_model
 
 model = load_model("model/i20_e1000.h5")
@@ -33,4 +34,6 @@ def predict(bwImage):
     colorizedImage.save(jpeg_image, 'JPEG')
     jpeg_image.seek(0)
 
-  return jpeg_image
+
+  data_url = 'data:image/jpeg;base64,' + base64.b64encode(jpeg_image.read()).decode('utf-8')
+  return data_url

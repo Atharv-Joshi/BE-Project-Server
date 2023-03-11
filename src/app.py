@@ -1,8 +1,15 @@
 #api
 from flask import Flask, request, Response
 from gan_model import predict 
+from flask_cors import CORS 
+import logging
+
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s %(levelname)s: %(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S')
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/upload', methods=['POST'])
 def upload():
